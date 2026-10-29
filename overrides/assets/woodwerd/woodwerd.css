@@ -1,0 +1,201 @@
+/* WOODWERD docs theme for MkDocs Material — the Ctrl family.
+   Colours and rules from the WOODWERD Design System; Inter replaces Gotham on the web. */
+
+/* ── Light ─────────────────────────────────────────────── */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #F9F7F3;          /* canvas-warm, never pure white */
+  --md-default-fg-color: #0C0B09;          /* ink-900 */
+  --md-default-fg-color--light: #46433D;   /* ink-600 */
+  --md-default-fg-color--lighter: #6B6560; /* ink-500 */
+  --md-default-fg-color--lightest: #DDD8D1;/* ink-200, dividers */
+  --md-typeset-color: #1A1916;
+  --md-typeset-a-color: #8A5F22;           /* amber, darkened to pass 4.5:1 on cream */
+  --md-accent-fg-color: #6E4B19;
+  --md-accent-fg-color--transparent: rgba(196, 148, 74, 0.12);
+  --md-code-bg-color: #F2EFE9;             /* canvas-soft */
+  --md-code-fg-color: #1A1916;
+  --md-footer-bg-color: #0C0B09;
+  --md-footer-bg-color--dark: #0C0B09;
+  --ww-rule: #C4944A;
+  --ww-card: #FDFCFA;
+  --ww-border: #DDD8D1;
+}
+
+/* ── Dark ──────────────────────────────────────────────── */
+[data-md-color-scheme="slate"] {
+  --md-hue: 30;
+  --md-default-bg-color: #141311;
+  --md-default-fg-color: #F9F7F3;
+  --md-default-fg-color--light: #C4BDB5;
+  --md-default-fg-color--lighter: #948E87;
+  --md-default-fg-color--lightest: #2E2C28;
+  --md-typeset-color: #EDEBE6;
+  --md-typeset-a-color: #D4A85E;
+  --md-accent-fg-color: #E8CA96;
+  --md-accent-fg-color--transparent: rgba(196, 148, 74, 0.16);
+  --md-code-bg-color: #1A1916;
+  --md-code-fg-color: #EDEBE6;
+  --md-footer-bg-color: #0C0B09;
+  --md-footer-bg-color--dark: #0C0B09;
+  --ww-rule: #C4944A;
+  --ww-card: #1A1916;
+  --ww-border: #2E2C28;
+}
+
+/* ── Header: ink in both schemes, amber rule on top ───── */
+:root, [data-md-color-scheme] {
+  --md-primary-fg-color: #0C0B09;
+  --md-primary-fg-color--light: #1A1916;
+  --md-primary-fg-color--dark: #0C0B09;
+  --md-primary-bg-color: #F9F7F3;
+  --md-primary-bg-color--light: #C4BDB5;
+}
+.md-header {
+  background-color: #0C0B09;
+  border-top: 2px solid #C4944A;
+  box-shadow: none;
+}
+.md-header--shadow { box-shadow: 0 1px 0 #1A1916; }
+.md-header__button.md-logo { margin: 0.2rem 0.4rem 0.2rem 0; padding: 0.2rem 0.4rem 0.2rem 0; }
+.md-header__button.md-logo img { height: 1.9rem; width: auto; }
+.md-header__title { margin-left: 0.6rem; }
+.md-header__topic:first-child { font-weight: 600; letter-spacing: -0.01em; }
+.md-tabs { background-color: #0C0B09; }
+
+/* Announcement bar */
+.md-banner { background-color: #1A1916; color: #C4BDB5; font-size: 0.68rem; letter-spacing: 0.02em; }
+.md-banner a { color: #D4A85E; }
+.md-banner a:hover { color: #E8CA96; }
+.ww-banner { display: flex; flex-wrap: wrap; gap: 0.2rem 1rem; justify-content: center; }
+.ww-banner__lead { font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.6rem; color: #C4944A; }
+
+/* ── Type: Inter, tight headings, a quiet amber rule ──── */
+.md-typeset { font-feature-settings: "ss01", "cv11"; }
+.md-typeset h1 {
+  font-size: 2.6180339887em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--md-default-fg-color);
+  margin-bottom: 0.9em;
+}
+.md-typeset h1::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin-top: 0.45em;
+  background: var(--ww-rule);
+}
+.md-typeset h2 {
+  font-size: 1.6180339887em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.md-typeset h3 {
+  font-size: 1.2720196495em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72em;
+  color: var(--md-default-fg-color--lighter);
+}
+.md-typeset a { text-decoration: none; }
+.md-typeset a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
+
+/* Phones: one step down the same scale */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset h1 { font-size: 1.6180339887em; }
+  .md-typeset h2 { font-size: 1.2720196495em; }
+  .md-typeset h3 { font-size: 1.1180339887em; }
+}
+
+/* Left nav: section titles as eyebrows */
+.md-nav__title, .md-nav--primary .md-nav__item--section > .md-nav__link {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  color: var(--md-default-fg-color--lighter);
+}
+.md-nav__link--active { font-weight: 600; }
+
+/* ── Sharp, architectural corners ─────────────────────── */
+.md-typeset code, .md-typeset pre > code, .md-typeset .highlight,
+.md-typeset .admonition, .md-typeset details, .md-typeset table:not([class]),
+.md-search__form, .md-search__output, .md-typeset .md-button, .md-clipboard {
+  border-radius: 2px;
+}
+
+/* Tables: cream card, hairline rules */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--ww-border);
+  background: var(--ww-card);
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--md-code-bg-color);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset table:not([class]) td { border-top: 1px solid var(--ww-border); }
+
+/* Admonitions: hairline box, amber edge on top */
+.md-typeset .admonition, .md-typeset details {
+  border: 1px solid var(--ww-border);
+  border-top: 2px solid var(--ww-rule);
+  background: var(--ww-card);
+  box-shadow: none;
+  font-size: 0.74rem;
+}
+
+/* Buttons: amber fill, ink text (7.2:1) */
+.md-typeset .md-button {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  border: 1px solid var(--md-default-fg-color);
+  color: var(--md-default-fg-color);
+  padding: 0.75em 1.6em;
+}
+.md-typeset .md-button--primary {
+  background: #C4944A;
+  border-color: #C4944A;
+  color: #0C0B09;
+}
+.md-typeset .md-button:hover, .md-typeset .md-button:focus {
+  background: #A87830;
+  border-color: #A87830;
+  color: #0C0B09;
+}
+
+/* Images: hairline frame */
+.md-typeset img { border-radius: 2px; }
+
+/* ── Footer ───────────────────────────────────────────── */
+.md-footer { background-color: #0C0B09; }
+.md-footer-meta { background-color: #0C0B09; border-top: 1px solid #1A1916; }
+.md-footer-meta__inner { align-items: center; }
+.md-copyright { color: #948E87; font-size: 0.62rem; letter-spacing: 0.04em; }
+.md-copyright__highlight { color: #C4BDB5; }
+.md-social__link svg { fill: #948E87; }
+.md-social__link:hover svg { fill: #C4944A; }
+.ww-footer-mark { display: flex; align-items: center; gap: 0.8rem; }
+.ww-footer-mark img { height: 1.8rem; width: auto; display: block; }
+.ww-footer-tagline {
+  font-weight: 700;
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #948E87;
+}

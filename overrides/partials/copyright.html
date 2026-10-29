@@ -1,0 +1,12 @@
+{#- WOODWERD docs theme: footer mark, tagline and the site's own copyright line. -#}
+<div class="md-copyright">
+  <div class="ww-footer-mark">
+    <a href="https://woodwerd.com" aria-label="WOODWERD Design">
+      <img src="{{ 'assets/woodwerd/woodwerd-mark-light.svg' | url }}" alt="WOODWERD Design">
+    </a>
+    <span class="ww-footer-tagline">Think · Design · Style</span>
+  </div>
+  {% if config.copyright %}
+    <div class="md-copyright__highlight">{{ config.copyright }}</div>
+  {% endif %}
+</div>
