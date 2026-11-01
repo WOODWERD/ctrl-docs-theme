@@ -1,0 +1,54 @@
+{#-
+  WOODWERD docs theme: the product header. Copied from Material 9.7.7 partials/header.html;
+  the logo is gone and the title carries name, purpose and version. Keep in step with the
+  version pinned in each product's docs workflow.
+-#}
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <label class="md-header__button md-icon" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <a class="ww-product" href="{{ nav.homepage.url | url }}">{{ config.site_name }}</a>
+          {% if config.extra.purpose %}<span class="ww-purpose">{{ config.extra.purpose }}</span>{% endif %}
+          {% if config.extra.version %}<span class="ww-version">{{ config.extra.version }}</span>{% endif %}
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page.meta and page.meta.title %}
+              {{ page.meta.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+    {% if config.theme.palette %}
+      {% if not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
+      {% endif %}
+    {% endif %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon" for="__search">
+          {% set icon = config.theme.icon.search or "material/magnify" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+  </nav>
+</header>
