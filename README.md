@@ -62,8 +62,8 @@ Change it here and every product site picks it up on its next build.
 | `overrides/assets/woodwerd/woodwerd.css` | WOODWERD Digital tokens, type, spacing and components |
 | `overrides/assets/woodwerd/fonts/` | Inter and JetBrains Mono with their OFL licences |
 
-The menu's tool list repeats the one in ESP Ctrl and Cable Ctrl until the products share
-tokens and chrome. Change all three together.
+The menu's tool list repeats the one in ESP Ctrl, Cable Ctrl and File Ctrl until the products
+share tokens and chrome. Change them all together.
 
 Light-mode links use a darker amber (`#8A5F22`) because the brand amber is too light for
 text on cream.
