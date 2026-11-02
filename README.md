@@ -63,7 +63,7 @@ Change it here and every product site picks it up on its next build.
 | `overrides/assets/images/favicon.png`, `overrides/assets/woodwerd/favicon.svg`, `apple-touch-icon.png` | The WW button for browser tabs and home screens |
 | `overrides/assets/woodwerd/fonts/` | Inter and JetBrains Mono with their OFL licences |
 
-The menu's tool list repeats the one in ESP Ctrl, Cable Ctrl and File Ctrl until the products
+The menu's tool list repeats the one in ESP Ctrl, Cable Ctrl, File Ctrl and Box Ctrl until the products
 share tokens and chrome. Change them all together.
 
 Light-mode links use a darker amber (`#8A5F22`) because the brand amber is too light for
