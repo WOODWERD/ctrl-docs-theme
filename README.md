@@ -60,6 +60,7 @@ Change it here and every product site picks it up on its next build.
 | `overrides/partials/copyright.html` | Footer: WOODWERD mark, tagline, the site's copyright line |
 | `overrides/partials/ww-mark.html` | The WOODWERD Design mark, inline, in `currentColor` for both themes |
 | `overrides/assets/woodwerd/woodwerd.css` | WOODWERD Digital tokens, type, spacing and components |
+| `overrides/assets/images/favicon.png`, `overrides/assets/woodwerd/favicon.svg`, `apple-touch-icon.png` | The WW button for browser tabs and home screens |
 | `overrides/assets/woodwerd/fonts/` | Inter and JetBrains Mono with their OFL licences |
 
 The menu's tool list repeats the one in ESP Ctrl, Cable Ctrl and File Ctrl until the products

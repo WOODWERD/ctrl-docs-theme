@@ -3,6 +3,12 @@
 {#- Inter and JetBrains Mono ship in assets/woodwerd/fonts. Nothing comes from a CDN. -#}
 {% block fonts %}{% endblock %}
 
+{#- The WW button. Material's own favicon path is overridden in assets/images/favicon.png. -#}
+{% block extrahead %}
+  <link rel="icon" href="{{ 'assets/woodwerd/favicon.svg' | url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ 'assets/woodwerd/apple-touch-icon.png' | url }}">
+{% endblock %}
+
 {#- WOODWERD docs theme: the toolkit strip above the header. Each site marks itself by repo_name. -#}
 {% macro tool(repo, name, url, line, tag=None) %}
   {% if config.repo_name == repo %}
