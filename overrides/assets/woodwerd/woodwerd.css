@@ -93,7 +93,7 @@
 .family .pitch { font-size: var(--t-micro); color: var(--ink-soft); }
 
 .md-typeset details.alltools { position: relative; margin: 0; padding: 0; border: 0; background: none; font-size: inherit; overflow: visible; }
-.md-typeset .alltools > summary { list-style: none; display: inline-flex; align-items: center; gap: var(--s5); padding: var(--s3) var(--s8); cursor: pointer; font-size: var(--t-micro); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: none; border: 1px solid var(--line-strong); border-radius: var(--s5); }
+.md-typeset .alltools > summary { list-style: none; display: flex; align-items: center; gap: var(--s5); padding: var(--s3) var(--s8); cursor: pointer; font-size: var(--t-micro); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: none; border: 1px solid var(--line-strong); border-radius: var(--s5); }
 .md-typeset .alltools > summary::-webkit-details-marker { display: none; }
 .md-typeset .alltools > summary::before { content: none; }
 .md-typeset .alltools > summary::after { content: "▾"; position: static; width: auto; height: auto; transform: none; background: none; -webkit-mask: none; mask: none; color: var(--ink-soft); font-size: var(--t-cap); line-height: 1; }
@@ -209,3 +209,6 @@ esp-web-install-button { --esp-tools-button-color: var(--primary); --esp-tools-b
 html .md-footer-meta.md-typeset .ww-footer-mark .ghlink, html .md-footer-meta.md-typeset .ww-footer-mark .ghlink:hover { color: var(--ink); }
 .ww-footer-mark .ghlink { margin-left: var(--s8); line-height: 1.5; }
 @media (pointer: coarse) { .family .ghlink, .ww-footer-mark .ghlink { min-height: 44px; } }
+
+/* phones: hang the All WOODWERD tools menu from the full-width strip, so it can't run off the left edge */
+@media (max-width: 767px) { .md-typeset details.alltools { position: static; } .toolmenu { left: 0; right: 0; width: auto; max-width: none; } }
